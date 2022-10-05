@@ -1,0 +1,17 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Weapon
+{
+    internal interface IWeapon
+    {
+        public int Damage { get; }
+        public string Name { get; }
+        public double Durability { get; }
+
+        public void Show();
+    }
+}
