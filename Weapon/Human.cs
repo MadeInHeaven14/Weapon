@@ -3,23 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Weapon
 {
-    internal class Human : IHuman
+    abstract internal class Human
     {
-        public string Name => throw new NotImplementedException();
-
-        public int Hp { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-
-        public void Attack(Weapon weapon, Human human)
+        public string name { get; set; }
+        public int hp { get; set; }
+        public Human(string Name, int HP)
         {
-            throw new NotImplementedException();
+            name = Name;
+            hp = HP;
         }
 
         public void Show()
         {
-            throw new NotImplementedException();
+            Console.WriteLine($"Human - {name} hp - {hp}");
         }
     }
 }
