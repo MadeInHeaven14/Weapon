@@ -12,17 +12,17 @@ namespace Weapon
         {
         }
 
-        public void Fix(Weapon weapon)
+        public void Fix(IRepairableWeapon weapon)
         {
-            weapon.durability = weapon.MaxDurability;
+            weapon.Durability = weapon.MaxDurability;
             Console.WriteLine($"{weapon.Name} починен!");
         }
 
-        public void Upgrade(Weapon weapon)
+        public void Upgrade(IUpgradeableWeapon weapon)
         {
-            weapon.lvl += 1;
-            weapon.damage += 2;
-            Console.WriteLine($"Уровень {weapon.Name}а повышен! Теперь у него {weapon.lvl} lvl и {weapon.damage} урона!");
+            weapon.Lvl += 1;
+            weapon.Damage += 2;
+            Console.WriteLine($"Уровень {weapon.Name}а повышен! Теперь у него {weapon.Lvl} lvl и {weapon.Damage} урона!");
         }
     }
 }

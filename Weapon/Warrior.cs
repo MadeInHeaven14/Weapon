@@ -12,42 +12,60 @@ namespace Weapon
         {
         }
 
-        public void Attack(IMeleeWeapon weapon, Human human)
+        public void AttackHuman(IMeleeWeapon weapon, Human human)
         {
-            if (human.hp > 0)
+            if (this.hp > 0)
             {
-                weapon.Attack();
-                human.hp -= weapon.Damage;
-                if (human.hp < 0)
+                if (human.hp > 0)
                 {
-                    human.hp = 0;
+                    Thread.Sleep(1500);
+                    weapon.Attack();
+                    human.hp -= weapon.Damage;
+                    if (human.hp < 0)
+                    {
+                        human.hp = 0;
+                    }
+                    Console.WriteLine($"У {human.name} осталось {human.hp} hp!");
                 }
-                Console.WriteLine($"У {human.name} осталось {human.hp} hp!");
+
+                else
+                {
+                    Console.WriteLine($"Невозможно атаковать! Враг мёртв!");
+                }
+
             }
 
             else
             {
-                Console.WriteLine("Невозможно атаковать!");
+                Console.WriteLine($"Невозможно атаковать! Вы  мертвы!");
             }
         }
 
-        public void ThrowWeapon(IThrowWeapon weapon, Human human)
+        public void ThrowWeaponInHuman(IThrowWeapon weapon, Human human)
         {
-
-            if (human.hp > 0)
+            if (this.hp > 0)
             {
-                weapon.ThrowWeapon();
-                human.hp -= weapon.Damage;
-                if (human.hp < 0)
+                if (human.hp > 0)
                 {
-                    human.hp = 0;
+                    //Thread.Sleep(1500);
+                    weapon.ThrowWeapon();
+                    human.hp -= weapon.Damage;
+                    if (human.hp < 0)
+                    {
+                        human.hp = 0;
+                    }
+                    Console.WriteLine($"У {human.name} осталось {human.hp} hp!");
                 }
-                Console.WriteLine($"У {human.name} осталось {human.hp} hp!");
+
+                else
+                {
+                    Console.WriteLine($"Невозможно атаковать! Враг мёртв!");
+                }
             }
 
             else
             {
-                Console.WriteLine($"Невозможно атаковать! {human.name} мёртв");
+                Console.WriteLine($"Невозможно атаковать! Вы  мертвы!");
             }
         }
     }

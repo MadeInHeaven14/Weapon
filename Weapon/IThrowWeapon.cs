@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Weapon
 {
-    internal interface IThrowWeapon : IWeapon
+    internal interface IThrowWeapon : IWeapon, IUpgradeableWeapon
     {
         public void ThrowWeapon();
     }

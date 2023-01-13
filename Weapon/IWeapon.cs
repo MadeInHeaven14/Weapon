@@ -8,9 +8,8 @@ namespace Weapon
 {
     internal interface IWeapon
     {
-        public int Damage { get; }
+        public int Damage { get; set;  }
         public string Name { get; }
-        public double Durability { get; }
 
         public void Show();
     }

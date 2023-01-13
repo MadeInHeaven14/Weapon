@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Weapon
 {
-    internal interface IRepairableWeapon
+    internal interface IRepairableWeapon : IWeapon
     {
-        public int Lvl { get; }
+        public double Durability { get; set; }
+        public double MaxDurability { get; }
     }
 }

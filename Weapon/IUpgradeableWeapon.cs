@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Weapon
 {
-    internal interface IMeleeWeapon : IWeapon, IUpgradeableWeapon, IRepairableWeapon
+    internal interface IUpgradeableWeapon : IWeapon
     {
-        public void Attack();
+        public int Lvl { get; set; }
     }
 }
